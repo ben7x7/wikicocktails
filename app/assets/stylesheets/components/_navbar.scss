@@ -1,0 +1,39 @@
+.navbar-resto {
+  justify-content: space-between;
+  align-item: center;
+  background: white;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+
+.navbar-resto .navbar-collapse {
+  flex-grow: 0;
+}
+
+.mr-auto {
+  margin-right: auto;
+  align-items: center;
+}
+
+.dropdown-menu {
+  width: 60px !important;
+}
+
+.dropdown-menu.show {
+  width: 60px !important;
+}
+
+.dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 30px;
+  top: -7px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
