@@ -1,1 +1,70 @@
-<%= @cocktail.name %>
+<div class="banner">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
+      <div class="cocktail-profil">
+        <div class="cocktail-title text-center">
+          <h2><%= @cocktail.name %><hr></h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-4">
+            <div class="cocktail-compo text-center">
+              <h4>Composition:</h4>
+              <table class="table" id="mytable">
+                <% @cocktail.doses.each do |dose| %>
+                  <tr>
+                    <td><%= dose.description %> </td>
+                    <td><%= dose.ingredient.name %> </td>
+                    <td>
+                      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                        <i class="far fa-trash-alt destroy_dose"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-offset-1 col-sm-4">
+            <div class="wrap-doseadd">
+              <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+            <h4>Reviews:</h4>
+            <ul class="list-group">
+              <% @cocktail.reviews.each do |review| %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-primary badge-pill">
+                <% counter = 0 %>
+                <% 5.times do %>
+                <i class="fas <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                <% counter += 1 %>
+              <% end %>
+              </span>
+              <%= review.comment %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4" >
+            <div class="wrap-reviewadd">
+              <%= render "reviews/new", cocktail: @cocktail, review: @review %>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="cocktail-links">
+              <%= link_to "HOME", root_path, class: 'btn btn-default' %>
+              <%= link_to "INDEX", cocktails_path, class: "btn btn-default" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
