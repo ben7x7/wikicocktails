@@ -9,15 +9,21 @@
 
 
 
-# require "open-uri"
-# require "yaml"
+require "open-uri"
+require "yaml"
 
-# file = "https://raw.githubusercontent.com/ben7x7/MisterCocktail/master/drinks.yml"
-# sample = YAML.load(open(file).read)
+puts "Destroy ingredients"
+Ingredient.destroy_all
 
-# puts 'creating ingredients'
-# sample["ingredients"].each do |ingredient|
-#   Ingredient.create! ingredient
-# end
+puts "Destroy Cocktails"
+Cocktail.destroy_all
 
-# puts 'Finished'
+file = "https://raw.githubusercontent.com/ben7x7/MisterCocktail/master/drinks.yml"
+sample = YAML.load(open(file).read)
+
+puts 'creating ingredients'
+sample["ingredients"].each do |ingredient|
+  Ingredient.create! ingredient
+end
+
+puts 'Finished'
