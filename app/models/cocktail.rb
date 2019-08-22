@@ -1,4 +1,7 @@
 class Cocktail < ApplicationRecord
+  include PgSearch
+  multisearchable against: [ :name ]
+
   has_many :ingredients, through: :doses
   has_many :doses, dependent: :destroy
   has_many :reviews

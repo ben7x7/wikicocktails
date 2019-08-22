@@ -1,5 +1,9 @@
 class CocktailsController < ApplicationController
   def index
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+      @cocktails = Cocktail.where(sql_query, query: "%#{params[:query]}%")
+    else
     @cocktails = Cocktail.all
   end
 
@@ -27,4 +31,6 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name)
   end
+
+
 end

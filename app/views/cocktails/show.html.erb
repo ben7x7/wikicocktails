@@ -1,39 +1,53 @@
-<div class="banner">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
-      <div class="cocktail-profil">
-        <div class="cocktail-title text-center">
-          <h2><%= @cocktail.name %><hr></h2>
-        </div>
-        <div class="row">
-          <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-4">
-            <div class="cocktail-compo text-center">
-              <h4>Composition:</h4>
-              <table class="table" id="mytable">
-                <% @cocktail.doses.each do |dose| %>
-                  <tr>
-                    <td><%= dose.description %> </td>
-                    <td><%= dose.ingredient.name %> </td>
-                    <td>
-                      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                        <i class="far fa-trash-alt destroy_dose"></i>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              </table>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-offset-1 col-sm-4">
+<div class="container">
+  <div class="wrapper-cocktail-show d-flex justify-content-center">
+    <div class="cocktail-show">
+      <div class="cocktail-title text-center">
+        <h2><%= @cocktail.name %><hr></h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="cocktail-composition">
+            <h4>Composition:</h4>
+            <table class="table" id="mytable">
+              <% @cocktail.doses.each do |dose| %>
+                <tr>
+                  <td><%= dose.description %> </td>
+                  <td><%= dose.ingredient.name %> </td>
+                  <td>
+                    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                      <i class="far fa-trash-alt destroy_dose"></i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+            <br>
             <div class="wrap-doseadd">
-              <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+              <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fas fa-plus"></i>
+              </button>
+              Add ingredient
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="form-wrapper">
+                  <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12 col-sm-offset-1 col-sm-5">
-            <h4>Reviews:</h4>
+        <div class="col-sm-6">
+          <div class="cocktail-technique">
+            <h4>Technique:</h4>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h4>Reviews:</h4>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="cocktail-reviews">
             <ul class="list-group">
               <% @cocktail.reviews.each do |review| %>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -49,20 +63,48 @@
               <% end %>
             </ul>
           </div>
-          <div class="col-xs-12 col-sm-4" >
-            <div class="wrap-reviewadd">
-              <%= render "reviews/new", cocktail: @cocktail, review: @review %>
-            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="wrap-reviewadd">
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+              <i class="fas fa-plus"></i>
+              </button>
+              Add your review
+              </p>
+              <div class="collapse" id="collapseExample2">
+                <div class="form-wrapper">
+                  <%= render "reviews/new", cocktail: @cocktail, review: @review %>
+                </div>
+              </div>
           </div>
         </div>
-        <hr>
+      </div>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="cocktail-links">
+          <%= link_to "HOME", root_path, class: 'btn btn-default' %>
+          <%= link_to "INDEX", cocktails_path, class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
         <div class="row">
-          <div class="col-xs-12 text-center">
-            <div class="cocktail-links">
-              <%= link_to "HOME", root_path, class: 'btn btn-default' %>
-              <%= link_to "INDEX", cocktails_path, class: "btn btn-default" %>
-            </div>
+          <div class="col-sm-6">
           </div>
+          <div class="col-sm-6" >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
         </div>
       </div>
     </div>
