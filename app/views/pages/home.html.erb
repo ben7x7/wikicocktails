@@ -1,8 +1,7 @@
-<section class="section section-home">
-  <div class="banner">
-    <%= image_tag 'wiki-home.png' %>
+
+  <div class="home-video-wrapper">
+    <%= video_tag "lemon.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+   <%= link_to "Cheers !", cocktails_path, class: "home" %>
   </div>
-  <div class="text-center">
-    <%= link_to "Cheers !", cocktails_path, class: "btn-home" %>
-  </div>
-</section>
+
+
