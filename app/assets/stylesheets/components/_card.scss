@@ -1,21 +1,22 @@
 .card {
   height: 200px;
-  background: $yellow;
+  background: #F0F2EF;
   background-size: cover !important;
-  background-position: center;
-  color: $gray;
+  color: #912F40;
   position: relative;
-  border: solid 2px $gray;
+  border: solid 3px #40434E;
   border-radius: 15px;
   margin: 15px 10px;
+  display: flex;
+  justify-content: center;
 }
 .card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-weight: bold;
 }
 .card-link {
   position: absolute;
