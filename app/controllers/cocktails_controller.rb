@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     if params[:query].present?
-      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+      sql_query = "cocktails.name @@ :query"
       @cocktails = Cocktail.where(sql_query, query: "%#{params[:query]}%")
     else
       @cocktails = Cocktail.all
