@@ -1,15 +1,8 @@
 
 <div class="form-new-dose">
-      <%= simple_form_for [cocktail, dose] do |f| %>
-
-
-        <div class="description">
-          <%= f.input :description %>
-        </div>
-        <div class="ingredient">
-          <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-        </div>
-
-        <%= f.button :submit,"VALID", class: "btn btn-add" %>
-      <% end %>
+  <%= simple_form_for [cocktail, dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient, input_html: { class: "select2" }, include_hidden: false %>
+    <%= f.button :submit, "Valid", class: "btn btn-add" %>
+  <% end %>
 </div>

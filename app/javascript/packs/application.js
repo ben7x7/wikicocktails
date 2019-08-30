@@ -1,4 +1,7 @@
 import 'bootstrap';
 
-import improveDropdown from '../components/select';
-improveDropdown();
+import 'select2/dist/css/select2.css';
+
+import { initselect2 } from '../components/select';
+
+initselect2();
