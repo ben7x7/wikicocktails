@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .new-cocktail-wraper {
-  margin-top: 30px;
-  padding: 30px 10px;
+  margin-top: 50px;
+  padding: 30px 30px;
   width: 100%;
   border-radius: 5px;
   background-color: white;
@@ -46,6 +46,10 @@ hr {
   padding-top: 0px;
 }
 
+.form-wrapper {
+  padding: 10px 10px;
+  background-color: #AFD5AA;
+}
 
 // index
 .wrap-cards {
@@ -67,11 +71,10 @@ label {
   }
 }
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
-.btn-add {
+.btn-add,
+.btn-new {
   margin-top: 15px !important;
-  color: white;
-  background-color: #912F40;
 }

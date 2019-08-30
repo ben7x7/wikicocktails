@@ -7,10 +7,9 @@
         </div>
         <div class="form-new-cocktail">
           <%= simple_form_for @cocktail do |f| %>
-
-              <%= f.input :name %>
-
-            <%= f.button :submit, class: 'btn btn-danger' %>
+            <%= f.input :name %>
+            <%= f.input :technique %>
+            <%= f.button :submit, class: 'btn btn-danger btn-new' %>
           <% end %>
         </div>
         <hr>

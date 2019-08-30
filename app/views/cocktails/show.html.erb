@@ -21,63 +21,72 @@
                 </tr>
               <% end %>
             </table>
-            <br>
-            <div class="wrap-doseadd">
-              <p>
-              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              <i class="fas fa-plus"></i>
-              </button>
-              Add ingredient
-              </p>
-              <div class="collapse" id="collapseExample">
-                <div class="form-wrapper">
-                  <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="cocktail-technique">
             <h4>Technique:</h4>
+            <%= @cocktail.technique %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="wrap-doseadd">
+            <p>
+            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-plus"></i>
+            </button>
+            Add ingredient
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="form-wrapper">
+                <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <hr>
-      <h4>Reviews:</h4>
       <div class="row">
         <div class="col-sm-6">
-          <div class="cocktail-reviews">
-            <ul class="list-group">
-              <% @cocktail.reviews.each do |review| %>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-danger badge-pill">
-                    <% counter = 0 %>
-                    <% 5.times do %>
-                      <i class="fas <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                      <% counter += 1 %>
-                    <% end %>
-                  </span>
-                  <%= review.comment %>
-                </li>
-              <% end %>
-            </ul>
+          <div class="reviews">
+            <h4>Reviews:</h4>
           </div>
         </div>
+
         <div class="col-sm-6">
           <div class="wrap-reviewadd">
             <p>
               <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
               <i class="fas fa-plus"></i>
               </button>
-              Add your review
-              </p>
-              <div class="collapse" id="collapseExample2">
-                <div class="form-wrapper">
-                  <%= render "reviews/new", cocktail: @cocktail, review: @review %>
-                </div>
+              Add review
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="form-wrapper">
+                <%= render "reviews/new", cocktail: @cocktail, review: @review %>
               </div>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cocktail-reviews">
+          <ul class="list-group">
+            <% @cocktail.reviews.each do |review| %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-danger badge-pill">
+                  <% counter = 0 %>
+                  <% 5.times do %>
+                    <i class="fas <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
+                  <% end %>
+                </span>
+                <%= review.comment %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
       <hr>
