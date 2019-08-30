@@ -2,7 +2,15 @@
   <div class="wrapper-cocktail-show d-flex justify-content-center">
     <div class="cocktail-show">
       <div class="cocktail-title text-center">
-        <h2><%= @cocktail.name %><hr></h2>
+        <h2>
+          <%= @cocktail.name %>
+          <%= link_to edit_cocktail_path(@cocktail.id) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Delete #{@cocktail.name}?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <hr></h2>
       </div>
       <div class="row">
         <div class="col-sm-6">
@@ -18,8 +26,8 @@
                       <i class="far fa-trash-alt destroy_dose"></i>
                     <% end %>
                   </td>
-                </tr>
               <% end %>
+                </tr>
             </table>
           </div>
         </div>

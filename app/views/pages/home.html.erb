@@ -2,7 +2,7 @@
   <div class="home-video-wrapper">
     <%= video_tag "lemon.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
     <div class="form-inline">
-      <%= form_tag cocktails_path, method: :get do %>
+      <%= form_tag cocktails_path, id:"home-form", method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a cocktail"%>
         <%= submit_tag "Search", class: "btn btn-success" %>
       <% end %>
