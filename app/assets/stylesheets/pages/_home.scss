@@ -1,29 +1,72 @@
-.home_video {
- width: 100vw;
- height: 100vh;
- position: absolute;
- object-fit: cover;
- top: 0;
- z-index: -2;
-}
 
-.home-video-wrapper {
-  height: 100vh;
+.home {
+  background-image: image-url('wiki-home-logo.png');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  width: 100%;
+  objet-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.home {
-  color: white;
+#search-form {
+  height: 60px !important;
+  border-radius: 40px !important;
   display: flex;
-  font-size: 32px;
-  border: solid 1px white;
-  border-radius: 5px;
-  padding: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
-#home-form {
+#search-form:hover > #query {
+  width: 240px !important;
+  padding-left: 20px !important;
+}
+
+#search-form:hover > .search-btn {
+  background-color: $pink !important;
+}
+
+#query {
+  border: none;
+  background-color: $flash-blue !important;
+  border-radius: 40px !important;
+  outline: none !important;
+  float: left;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 60px !important;
+  width: 0 !important;
+  padding: 0 !important;
+}
+
+.wrap-btn {
+  position: relative;
+  float: right;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $pink !important;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-btn {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.search-icone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $flash-blue;
+  z-index: 999;
 }
 

@@ -1,12 +1,22 @@
+<section class="home">
+  <form id="search-form" action="/cocktails" accept-charset="UTF-8" method="get">
+    <input name="utf8" type="hidden" value="✓">
+    <input type="text" name="query" id="query" class="form-control" placeholder="Find a cocktail">
+    <div class="wrap-btn">
+      <input type="submit" name="commit" value="" class="search-btn" data-disable-with="Search">
+      <i class="fas fa-search fa-2x search-icone"></i>
+    </div>
 
-  <div class="home-video-wrapper">
-    <%= video_tag "lemon.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
-    <div class="form-inline">
+  </form>
+</section>
+
+    <!-- <div class="form-inline">
       <%= form_tag cocktails_path, id:"home-form", method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a cocktail"%>
         <%= submit_tag "Search", class: "btn btn-success" %>
       <% end %>
-    </div>
-  </div>
+    </div> -->
+
+
 
 

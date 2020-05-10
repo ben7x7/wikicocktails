@@ -6,5 +6,6 @@ const initselect2 = () => {
     $('.select2').select2();
   });
 }
- export { initselect2 };
+
+export { initselect2 };
 
