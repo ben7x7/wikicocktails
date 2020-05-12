@@ -4,18 +4,28 @@
       <div class="cocktail-title text-center">
         <h2>
           <%= @cocktail.name %>
+        </h2>
+        <div class="edit-links">
           <%= link_to edit_cocktail_path(@cocktail.id) do %>
-            <i class="far fa-edit"></i>
+            <i class="far fa-edit fa-2x"></i>
           <% end %>
-          <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Delete #{@cocktail.name}?"} do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-        <hr></h2>
+        </div>
+        <hr>
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <div class="cocktail-composition">
+          <div class="header-title">
             <h4>Composition:</h4>
+            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-plus"></i>
+            </button>
+          </div>
+            <div class="collapse" id="collapseExample">
+              <div class="form-wrapper">
+                <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+              </div>
+            </div>
+          <div class="cocktail-composition">
             <table class="table" id="mytable">
               <% @cocktail.doses.each do |dose| %>
                 <tr>
@@ -38,39 +48,16 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="wrap-doseadd">
-            <p>
-            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            <i class="fas fa-plus"></i>
-            </button>
-            Add ingredient
-            </p>
-            <div class="collapse" id="collapseExample">
-              <div class="form-wrapper">
-                <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <hr>
       <div class="row">
         <div class="col-sm-6">
           <div class="reviews">
-            <h4>Reviews:</h4>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="wrap-reviewadd">
-            <p>
+            <div class="header-title">
+              <h4>Reviews:</h4>
               <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
               <i class="fas fa-plus"></i>
               </button>
-              Add review
-            </p>
+            </div>
             <div class="collapse" id="collapseExample2">
               <div class="form-wrapper">
                 <%= render "reviews/new", cocktail: @cocktail, review: @review %>
@@ -100,6 +87,7 @@
       <hr>
       <div class="row justify-content-center">
         <div class="cocktail-links">
+          <%= link_to "Delete", cocktails_path(@cocktail), class: 'btn btn-danger', method: :delete, data: { confirm: "Delete #{@cocktail.name}?"} %>
           <%= link_to "Home", root_path, class: 'btn btn-success' %>
           <%= link_to "Index", cocktails_path, class: "btn btn-info" %>
         </div>

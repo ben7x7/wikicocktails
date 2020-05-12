@@ -1,10 +1,10 @@
 .card {
-  height: 200px;
-  background: #F0F2EF;
+  height: 150px;
+  background: $snow;
   background-size: cover !important;
-  color: #912F40;
+  color: $morning-blue;
   position: relative;
-  border: solid 3px #40434E;
+  border: none;
   border-radius: 15px;
   margin: 15px 10px;
   display: flex;

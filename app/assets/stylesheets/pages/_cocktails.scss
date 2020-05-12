@@ -1,6 +1,8 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .new-cocktail-wraper {
   margin-top: 50px;
   padding: 30px 30px;
@@ -10,40 +12,55 @@
   box-shadow: 0 2px 14px rgba(126,87,88,0.1), 0 3px 6px rgba(0,0,0,0.08);
 }
 
-
-
 // show
 .cocktail-title h2 {
-  color: #912F40;
+  color: $morning-blue;;
   font-weight: bold;
 }
 
+.cocktail-title {
+  position: relative;
+}
+
+.edit-links {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 hr {
-  border-color: #40434E;
+  border-color: $morning-blue;;
 }
 
 .cocktail-show {
   padding: 15px 15px;
   margin-top: 15px;
-  color: #40434E;
-  background-color: white;
+  color: $morning-blue;
+  background-color: $snow;
   opacity: 0.9;
   border-radius: 10px;
   width: 900px;
   box-shadow: 0 2px 14px rgba(126,87,88,0.1), 0 3px 6px rgba(0,0,0,0.08);
 }
 
-.wrap-doseadd,
-.wrap-reviewadd {
-  padding: 0px 10px;
-  justify-content : start;
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.select2,
-.form-control {
-  height: 38px !important;
-  width: 100% !important;
+#dose_description {
+  width: 90px !important;
 }
+
+.select2-container .select2-selection--single {
+  width: 240px !important;
+  height: 38px !important;
+  vertical-align: middle !important;
+  padding-top: 5px !important;
+}
+
 .cocktail-links {
   padding-top: 0px;
 }
@@ -54,12 +71,32 @@ hr {
 }
 
 // index
+
+.container-index {
+  width: 80%;
+  margin: auto;
+}
+
 .wrap-cards {
   padding: 20px 0px;
   margin: 0px 20px;
 }
+
+.container-title {
+  background-image: image-url('cocktail-panel.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  position: relative;
+}
+
 .container-title h2 {
-  font-weight: lighter !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: $snow;
 }
 
 label {
@@ -67,6 +104,7 @@ label {
   font-weight: normal;
   margin-bottom: 0px;
 }
+
 .form-control {
   label {
     margin-bottom: 1px;
@@ -76,7 +114,4 @@ label {
   margin-bottom: 0px;
 }
 
-.btn-add,
-.btn-new {
-  margin-top: 15px !important;
-}
+

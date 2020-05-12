@@ -1,8 +1,15 @@
 
 <div class="form-new-dose">
-  <%= simple_form_for [cocktail, dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient, input_html: { class: "select2" }, include_hidden: false %>
-    <%= f.button :submit, "Valid", class: "btn btn-danger btn-add" %>
+  <%= simple_form_for [cocktail, dose],
+    wrapper: :inline_form,
+    html: { class: "form-inline" },
+    wrapper_mappings: {
+      boolean: :inline_boolean
+    } do |f| %>
+
+    <%= f.input :description, input_html: { class: "dose-desc" }, placeholder: "Quantity" %>
+    <%= f.association :ingredient, input_html: { class: "select2" }, include_hidden: false, prompt: "Select ingredient" %>
+    <%= f.button :submit, "Add", class: "btn btn-danger btn-add" %>
   <% end %>
 </div>
+
