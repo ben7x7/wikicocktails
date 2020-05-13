@@ -12,8 +12,15 @@
   flex-grow: 0;
 }
 
+#navbarSupportedContent {
+  text-align: center;
+}
+
 .mr-auto {
   margin-right: auto;
   align-items: center;
 }
 
+.navbar-toggler {
+  background-color: $flash-blue !important;
+}
