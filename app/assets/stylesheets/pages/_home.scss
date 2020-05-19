@@ -1,17 +1,22 @@
 
 .home {
-  background-image: image-url('wiki-home-logo.png');
+  background-image: radial-gradient(  circle,
+                                      rgba(46,47,48,.3) 0%,
+                                      rgba(46,47,48,.5) 10%,
+                                      rgba(46,47,48,1) 40%),
+                                      image-url('wall.jpg');
   background-size: cover;
   background-position: center;
   height: 90vh;
   width: 100%;
-  objet-fit: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 #search-form {
+  margin-top: 30px;
   height: 60px !important;
   border-radius: 40px !important;
   display: flex;
