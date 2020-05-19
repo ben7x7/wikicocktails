@@ -8,7 +8,7 @@
     } do |f| %>
 
     <%= f.input :description, input_html: { class: "dose-desc" }, placeholder: "Quantity" %>
-    <%= f.association :ingredient, input_html: { class: "select2" }, include_hidden: true, prompt: "Select ingredient" %>
+    <%= f.association :ingredient, input_html: { class: "select2" }, include_hidden: false, prompt: "Select ingredient" %>
     <%= f.button :submit, "Add", class: "btn btn-danger btn-add" %>
   <% end %>
 </div>
