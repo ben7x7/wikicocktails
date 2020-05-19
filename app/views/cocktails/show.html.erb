@@ -87,7 +87,6 @@
       <hr>
       <div class="row justify-content-center">
         <div class="cocktail-links">
-          <%= link_to "Delete", cocktails_path(@cocktail), class: 'btn btn-warning', method: :delete, data: { confirm: "Delete #{@cocktail.name}?"} %>
           <%= link_to "Home", root_path, class: 'btn btn-success' %>
           <%= link_to "Index", cocktails_path, class: "btn btn-info" %>
         </div>
