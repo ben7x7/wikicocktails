@@ -1,3 +1,24 @@
 // Place all the styles related to the doses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_dose {
+  display: grid;
+  grid-template-columns: 2fr 6fr 1fr;
+  grid-template-rows: 50px;
+
+}
+
+.form-control-label {
+  display: none !important;
+}
+
+#dose_description {
+  height: 100% !important;
+}
+
+#dose_ingredient_id,
+#data-select2-id {
+  height: 100% !important;
+  width: 100% !important;
+}
