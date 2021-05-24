@@ -8,6 +8,7 @@
     "lodash": "^4.17.13",
     "lodash.template": "^4.5.0",
     "popper.js": "^1.15.0",
+    "postcss": "^8.2.10",
     "select2": "^4.0.9"
   },
   "devDependencies": {
